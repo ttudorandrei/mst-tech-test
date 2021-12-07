@@ -2,3 +2,17 @@
   text-align: center;
 }
 
+.Blink {
+  font-size: 14px;
+  color: rgb(255, 0, 0);
+  vertical-align: middle;
+  animation: blinker 0.8s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+}
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
