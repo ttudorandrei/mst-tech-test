@@ -8,16 +8,9 @@
   vertical-align: middle;
   animation: blinker 0.8s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
 }
-@keyframes blinker {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
 
-/* CSS */
+/* button source: https://getcssscan.com/css-buttons-examples, Button-28 */
+
 .show-table-button {
   appearance: none;
   background-color: transparent;
@@ -61,4 +54,13 @@
 .show-table-button:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
