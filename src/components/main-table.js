@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import socketClient from "socket.io-client";
+import { v4 as uuidv4 } from "uuid";
+
+import "./style.css";
 
 const endpoint = "https://mst-full-stack-dev-test.herokuapp.com/";
 
@@ -18,18 +21,33 @@ const MainTable = () => {
 
   return (
     <table className="main-table">
-      <thead className="table-head">
-        <tr className="table-row">
-          <td className="table-category">
-            Category:
+      <thead>
+        <tr>
+          <td className="table-column">
+            <h1 className="table-header">Category</h1>
             {responseObjectKeys.map((key) => {
-              return <div>{key}</div>;
+              return (
+                <div className="table-cell" key={uuidv4()}>
+                  {key}
+                </div>
+              );
             })}
           </td>
-          <td className="table-value">
-            Value:
+          <td className="table-column">
+            <h1 className="table-header">Value</h1>
             {responseObjectValues.map((value) => {
-              return <div>{value}</div>;
+              if (value) {
+                return (
+                  <div className="table-cell" key={uuidv4()}>
+                    {value}
+                  </div>
+                );
+              }
+              return (
+                <div className="table-cell" key={uuidv4()}>
+                  Not Available
+                </div>
+              );
             })}
           </td>
         </tr>

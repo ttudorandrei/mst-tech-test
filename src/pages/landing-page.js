@@ -1,8 +1,10 @@
 import MainTable from "../components/main-table";
 
+import "./style.css";
+
 const LandingPage = () => {
   return (
-    <div>
+    <div className="landing-page--container">
       <MainTable />
     </div>
   );
