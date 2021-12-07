@@ -12,6 +12,7 @@ const App = () => {
         <i className="fa fa-circle text-danger Blink"></i>&nbsp; MST Systems -
         Live Data Table
       </h1>
+      {/* renders the button only if showData is false */}
       {!showData && (
         <button
           className="show-table-button"
@@ -22,6 +23,7 @@ const App = () => {
           Show Table
         </button>
       )}
+      {/* when showData is set to true, the table will be displayed */}
       {showData && <LandingPage />}
     </div>
   );

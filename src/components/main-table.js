@@ -7,8 +7,10 @@ import "./style.css";
 const endpoint = "https://mst-full-stack-dev-test.herokuapp.com/";
 
 const MainTable = () => {
+  // hooks
   const [response, setResponse] = useState("");
 
+  // listening on data-update via socket.io and storing the data in "response"
   useEffect(() => {
     const socket = socketClient(endpoint);
     socket.on("data-update", (data) => {
@@ -16,6 +18,7 @@ const MainTable = () => {
     });
   }, []);
 
+  // getting arrays for the object keys and values
   const responseObjectKeys = Object.keys(response);
   const responseObjectValues = Object.values(response);
 
@@ -25,6 +28,7 @@ const MainTable = () => {
         <tr>
           <td className="table-column">
             <h1 className="table-header">Category</h1>
+            {/* for every key in the previously created keys array, create a table entry */}
             {responseObjectKeys.map((key) => {
               return (
                 <div className="table-cell" key={uuidv4()}>
@@ -35,6 +39,8 @@ const MainTable = () => {
           </td>
           <td className="table-column">
             <h1 className="table-header">Value</h1>
+            {/* for every value in the previously created values array, create a table entry */}
+
             {responseObjectValues.map((value) => {
               if (value) {
                 return (
@@ -44,6 +50,7 @@ const MainTable = () => {
                 );
               }
               return (
+                // if there is no value, return a div with specific text
                 <div className="table-cell" key={uuidv4()}>
                   Not Available
                 </div>
