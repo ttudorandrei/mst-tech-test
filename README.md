@@ -7,9 +7,13 @@ Demo app built with React that is using Socket.io to listen to server and render
 ## Usage
 
 1: Clone the repo to you local machine
+  
 2: `cd` into the repo folder
+  
 3: run `npm install` to install dependencies
+  
 4: to run the app type in `npm run start` in your terminal
+  
 
 ## Link to github
 
